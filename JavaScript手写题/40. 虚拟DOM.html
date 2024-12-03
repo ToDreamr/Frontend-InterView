@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<script>
+    var vnode = {
+        tag: 'ul',
+        props: {
+            class: 'list'
+        },
+        text: '',
+        children: [
+            {
+                tag: "li",
+                props: {
+                    class: "item"
+                },
+                text: '',
+                children: [
+                    {
+                        tag: undefined,
+                        props: {},
+                        text: '牛客网',
+                        children: []
+                    }
+                ]
+            },
+            {
+                tag: "li",
+                props: {},
+                text: '',
+                children: [
+                    {
+                        tag: undefined,
+                        props: {},
+                        text: 'nowcoder',
+                        children: []
+                    }
+                ]
+            }
+        ]
+    }
+    /**
+     * @Description:
+     * 请补全JavaScript代码，要求将对象参数转换为真实的DOM结构并返回。
+     * 注意：
+     * 1. tag为标签名称、props为属性、children为子元素、text为标签内容
+     * */
+    const _createElm = vnode => {
+        // 补全代码
+        let {tag, props, text, children} = vnode
+        if(typeof tag === 'string') {
+            vnode.el = document.createElement(tag)
+            _setProps(vnode.el, props)
+            vnode.el.append(document.createTextNode(text))
+            children.forEach((child) => {
+                vnode.el.append(_createElm(child))
+            })
+        }else {
+            vnode.el = document.createTextNode(text)
+        }
+        return vnode.el
+    }
+
+    const _setProps = (el, props) => {
+        for (let key in props) {
+            el.setAttribute(key, props[key])
+        }
+    }
+    document.body.append(_createElm(vnode))
+</script>
+</body>
+</html>

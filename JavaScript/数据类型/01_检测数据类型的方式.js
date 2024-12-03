@@ -1,0 +1,23 @@
+console.log(typeof 1)
+console.log(typeof 'abc')
+console.log(typeof undefined)
+console.log(typeof true)
+console.log(typeof Symbol())
+console.log(typeof 1n)
+console.log(typeof console.log)
+console.log(typeof null)
+
+console.log('instanceof 判断')
+console.log([] instanceof Array)
+console.log(function () {} instanceof Function)
+console.log({} instanceof Object)
+
+console.log('Object.prototype.toString.call()判断')
+console.log(Object.prototype.toString.call(2))
+console.log(Object.prototype.toString.call('2'))
+console.log(Object.prototype.toString.call(undefined))
+console.log(Object.prototype.toString.call(function () {}))
+
+console.log('constructor判断')
+console.log((2).constructor === Number)
+console.log((true).constructor === Boolean)

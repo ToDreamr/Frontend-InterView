@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+  <div class="center-wrap">
+    <div class="center"></div>
+  </div>
+  <div class="left"></div>
+  <div class="right"></div>
+</div>
+</body>
+<style>
+  /*利用绝对定位和margin进行布局*/
+/*  .container {
+    height: 200px;
+    position: relative;
+  }
+  .left {
+    height: 200px;
+    background-color: tomato;
+    width: 200px;
+    position: absolute;
+  }
+  .right {
+    height: 200px;
+    background-color: gold;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .center {
+    height: 200px;
+    background-color: lightgreen;
+    margin-left: 200px;
+    margin-right: 200px;
+  }*/
+
+  /*利用flex进行布局*//*
+  .container {
+    height: 200px;
+    display: flex;
+  }
+  .left {
+    height: 200px;
+    background-color: tomato;
+    width: 200px;
+  }
+  .right {
+    height: 200px;
+    background-color: gold;
+    width: 200px;
+  }
+  .center {
+    height: 200px;
+    background-color: lightgreen;
+    flex: 1;
+  }*/
+
+  /*利用float和margin进行布局*/
+  /*.container {
+    height: 200px;
+  }
+  .left {
+    height: 200px;
+    background-color: tomato;
+    width: 200px;
+    float: left;
+  }
+  .right {
+    height: 200px;
+    background-color: gold;
+    width: 200px;
+    float: right;
+  }
+  .center {
+    height: 200px;
+    background-color: lightgreen;
+    margin-right: 200px;
+    margin-left: 200px;
+  }*/
+
+  /*圣杯布局*/
+  /*.container {
+    height: 200px;
+    padding: 0 200px;
+  }
+  .left {
+    height: 200px;
+    background-color: tomato;
+    width: 200px;
+    float: left;
+    position: relative;
+    margin-left: -100%;
+    left: -200px;
+  }
+  .right {
+    height: 200px;
+    background-color: gold;
+    width: 200px;
+    float: left;
+    position: relative;
+    margin-right: -100%;
+  }
+  .center {
+    height: 200px;
+    width: 100%;
+    float: left;
+    background-color: lightgreen;
+  }*/
+
+  /*双飞翼布局*/
+  .container {
+    height: 200px;
+  }
+  .left {
+    height: 200px;
+    background-color: tomato;
+    width: 200px;
+    float: left;
+    margin-left: -100%;
+  }
+  .right {
+    height: 200px;
+    background-color: gold;
+    width: 200px;
+    float: left;
+    /*margin-left: -200px;*/
+    margin-left: -200px;
+  }
+  .center-wrap {
+    width: 100%;
+    float: left;
+  }
+  .center {
+    height: 200px;
+    background-color: lightgreen;
+    margin: 0 200px;
+  }
+</style>
+</html>

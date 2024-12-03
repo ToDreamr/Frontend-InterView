@@ -1,0 +1,5 @@
+console.log([] instanceof Array)
+console.log(Object.prototype.toString.call([]))
+console.log(Array.isArray([]))
+console.log(Object.getPrototypeOf([]) === Array.prototype )
+console.log(Array.prototype.isPrototypeOf([]))

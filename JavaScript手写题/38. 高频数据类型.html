@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+</head>
+<body>
+
+<script type="text/javascript">
+    const _findMostType = array => {
+        // 补全代码
+        let map = new Map()
+        let res = []
+        let flag = 0
+        array.forEach((item) => {
+            let type = typeof item
+            if(map.has(type)) {
+                let count = map.get(type)
+                count ++
+                map.set(type, count)
+                flag = Math.max(flag, count)
+            }else {
+                map.set(type, 1)
+            }
+        })
+
+        let keys = map.keys()
+        console.log(keys)
+        for (let key of keys) {
+            if(map.get(key) === flag) {
+                res.push(key)
+            }
+        }
+        res.push(flag)
+        console.log(res)
+        return res
+    }
+    _findMostType([0,0,'',''])
+</script>
+</body>
+</html>

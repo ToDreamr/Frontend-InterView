@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="left"></div>
+    <div class="right"></div>
+</div>
+</body>
+</html>
+<style>
+    /*.container {*/
+    /*    height: 200px;*/
+    /*}*/
+/*    float margin-left 进行布局*/
+/*    .left {*/
+/*        float: left;*/
+/*        width: 200px;*/
+/*        height: 200px;*/
+/*        background-color: tomato;*/
+/*    }*/
+/*    .right {*/
+/*        margin-left: 200px;*/
+/*        height: 200px;*/
+/*        width: auto;*/
+/*        background-color: gold;*/
+/*    }*/
+
+    /* 利用浮动和BFC进行布局*/
+    /*.left {
+        float: left;
+        background-color: tomato;
+        height: 200px;
+        width: 200px;
+    }
+    .right {
+        height: 300px;
+        background-color: gold;
+        overflow: hidden;
+    }*/
+
+/*    利用flex布局*/
+    /*.container {
+        height: 200px;
+        display: flex;
+    }
+    .left {
+        background-color: tomato;
+        width: 200px;
+        height: 200px;
+    }
+
+    .right {
+        height: 200px;
+        background-color: gold;
+        flex: 1;
+    }*/
+
+    /*利用绝对定位进行布局*/
+    .container {
+        height: 200px;
+        position: relative;
+    }
+    .left {
+        position: absolute;
+        background-color: tomato;
+        height: 200px;
+        width: 200px;
+    }
+    .right {
+        margin-left: 200px;
+        height: 200px;
+        background-color: gold;
+        flex: 1;
+    }
+</style>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  /*.div1 {
+    width: 10%;
+    height: 10vw;
+    background-color: tomato;
+  }*/
+
+  /*.div1{
+    width: 20%;
+    height: 0;
+    padding-top: 20%;
+    background-color: tomato;
+  }*/
+
+  .div1 {
+    width: 30%;
+    overflow: hidden;
+    background: yellow;
+  }
+  .div1::after {
+    content: '';
+    display: block;
+    margin-top: 100%;
+  }
+</style>
+<body>
+  <div class="div1"></div>
+</body>
+</html>

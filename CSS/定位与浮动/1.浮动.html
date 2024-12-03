@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="son1"></div>
+        <div class="son2"></div>
+        <div class="son3"></div>
+        <div class="son4"></div>
+        <p class="son5"></p>
+    </div>
+    <div class="brother">
+
+    </div>
+</body>
+<style>
+    .parent {
+        background-color: tomato;
+        width: 100px;
+        /*创建BFC*/
+        /*overflow: hidden;*/
+    }
+
+    .parent::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+    .brother {
+        height: 500px;
+        width: 300px;
+        background-color: lightgreen;
+    }
+
+    .parent > div {
+        background-color: gold;
+        width: 100px;
+        height: 100px;
+        float: left;
+    }
+
+    /*子元素底部*/
+    /*.son5 {
+        clear: both;
+    }*/
+
+
+</style>
+</html>

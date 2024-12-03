@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+<style>
+  ul {
+    list-style: none;
+  }
+</style>
+<input type="text">
+<ul></ul>
+
+<script>
+  var ul = document.querySelector('ul');
+  var person = { sex: '男', age: '25', name: '王大锤', height: 28, weight: 32 };
+  var inp = document.querySelector('input');
+  inp.value = person.weight;
+  const _render = () => {
+    var str = `<li>姓名：<span>${person.name}</span></li>
+                           <li>性别：<span>${person.sex}</span></li>
+                           <li>年龄：<span>${person.age}</span></li>
+                           <li>身高：<span>${person.height}</span></li>
+                           <li>体重：<span>${person.weight}</span></li>`
+    ul.innerHTML = str;
+    inp.value = person.weight;
+  }
+  _render(ul);
+  // 补全代码
+  /**
+   * @Description:
+   *  请补全JavaScript代码，要求如下：
+   * 1. 监听对象属性的变化
+   *   2. 当"person"对象属性发生变化时，页面中与该属性相关的数据同步更新
+   *   3. 将输入框中的值与"person"的"weight"属性绑定且当输入框的值发生变化时，页面中与该属性相关的数据同步更新
+   *   注意：
+   * 1. 必须使用Object.defineProperty实现且触发set方法时更新视图
+   *   2. 必须使用DOM0级标准事件（oninput）
+   * 3. 可以使用预设代码"_render"函数
+   * */
+
+  Object.keys(person).forEach(prop => {
+    let oldValue = person[prop]
+
+    Object.defineProperty(person, prop, {
+      get() {
+        return oldValue
+      },
+      set(value) {
+        oldValue = value
+        _render(ul)
+      }
+    })
+  })
+
+  inp.oninput = function () {
+    person.weight = this.value
+  }
+</script>
+</body>
+</html>
